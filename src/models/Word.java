@@ -8,10 +8,14 @@ import com.google.common.base.Objects;
 public class Word implements Comparable<Word>{
     private String spanishWord;
     private String englishWord;
+    private Word leftWord = null;
+    private Word rightWord = null;
 
-    public Word(String spanishWord, String englishWord){
+    public Word(String spanishWord, String englishWord, Word leftWord, Word rightWord){
         this.spanishWord = spanishWord;
         this.englishWord = englishWord;
+        this.leftWord = leftWord;
+        this.rightWord = rightWord;
     }
 
     public String toString(){
@@ -26,6 +30,10 @@ public class Word implements Comparable<Word>{
         this.englishWord = englishWord;
     }
 
+    public void addLeftWord(Word leftWord) { this.leftWord = leftWord; }
+
+    public void addRightWord(Word rightWord) { this.rightWord = rightWord; }
+
     public String getSpanishWord(){
         return spanishWord;
     }
@@ -33,6 +41,10 @@ public class Word implements Comparable<Word>{
     public String getEnglishWord(){
         return englishWord;
     }
+
+    public Word getLeftWord(){return leftWord;}
+
+    public Word getRightWord(){return rightWord;}
 
     @Override
     public int hashCode(){

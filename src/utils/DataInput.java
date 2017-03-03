@@ -28,7 +28,7 @@ public class DataInput {
                 String spanishWord = wordTokens[0];
                 String englishWord = wordTokens[1];
 
-                words.add(new Word(spanishWord, englishWord));
+                words.add(new Word(spanishWord, englishWord, null, null));
             }else{
                 throw new Exception("Invalid token length: " + wordTokens.length);
             }
